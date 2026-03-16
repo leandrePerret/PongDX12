@@ -1,0 +1,6 @@
+﻿  DirectXHandler.cpp
+  WinMain.cpp
+  Generating Code...
+C:\Users\Owari\Desktop\github\PongDX12\WindowsHandler\WinMain.cpp(55,1): warning C4715: 'WinMain': not all control paths return a value
+C:\Users\Owari\Desktop\github\PongDX12\DX12Handler\DirectXHandler.cpp(44,1): warning C4715: 'GetHardwareAdapter': not all control paths return a value
+  PongDX12.vcxproj -> C:\Users\Owari\Desktop\github\PongDX12\Build\PongDX12\Debug\PongDX12.exe
