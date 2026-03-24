@@ -1,6 +1,22 @@
-﻿  DirectXHandler.cpp
-  WinMain.cpp
-  Generating Code...
-C:\Users\Owari\Desktop\github\PongDX12\WindowsHandler\WinMain.cpp(55,1): warning C4715: 'WinMain': not all control paths return a value
-C:\Users\Owari\Desktop\github\PongDX12\DX12Handler\DirectXHandler.cpp(44,1): warning C4715: 'GetHardwareAdapter': not all control paths return a value
-  PongDX12.vcxproj -> C:\Users\Owari\Desktop\github\PongDX12\Build\PongDX12\Debug\PongDX12.exe
+﻿  OwariEngine.cpp
+C:\Users\Owari\Desktop\github\PongDX12\Core\OwariEngine.cpp(18,12): error C2660: 'CreateDXGIFactory': function does not take 0 arguments
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\dxgi.h(2293,16):
+      see declaration of 'CreateDXGIFactory'
+      C:\Users\Owari\Desktop\github\PongDX12\Core\OwariEngine.cpp(18,12):
+      while trying to match the argument list '()'
+  
+C:\Users\Owari\Desktop\github\PongDX12\Core\OwariEngine.cpp(18,29): error C2440: '=': cannot convert from 'HRESULT' to 'IDXGIFactory7 *'
+      C:\Users\Owari\Desktop\github\PongDX12\Core\OwariEngine.cpp(18,29):
+      Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or parenthesized function-style cast
+  
+C:\Users\Owari\Desktop\github\PongDX12\Core\OwariEngine.cpp(19,12): error C3861: 'GetHardwareAdapter': identifier not found
+C:\Users\Owari\Desktop\github\PongDX12\Core\OwariEngine.cpp(20,11): error C3861: 'CreateDevice': identifier not found
+C:\Users\Owari\Desktop\github\PongDX12\Core\OwariEngine.cpp(21,17): error C3861: 'CreateCommandQueue': identifier not found
+C:\Users\Owari\Desktop\github\PongDX12\Core\OwariEngine.cpp(22,53): error C2065: 'FrameCount': undeclared identifier
+C:\Users\Owari\Desktop\github\PongDX12\Core\OwariEngine.cpp(22,18): error C3861: 'CreateSwapChainDesc': identifier not found
+C:\Users\Owari\Desktop\github\PongDX12\Core\OwariEngine.cpp(23,14): error C3861: 'CreateSwapChain': identifier not found
+C:\Users\Owari\Desktop\github\PongDX12\Core\OwariEngine.cpp(24,12): error C3861: 'CreateDescriptorHeap': identifier not found
+C:\Users\Owari\Desktop\github\PongDX12\Core\OwariEngine.cpp(25,2): error C3861: 'CreateRenderTargets': identifier not found
+C:\Users\Owari\Desktop\github\PongDX12\Core\OwariEngine.cpp(26,21): error C3861: 'CreateCommandAllocator': identifier not found
+C:\Users\Owari\Desktop\github\PongDX12\Core\OwariEngine.cpp(27,16): error C3861: 'CreateCommandList': identifier not found
+C:\Users\Owari\Desktop\github\PongDX12\Core\OwariEngine.cpp(28,10): error C3861: 'CreateFence': identifier not found

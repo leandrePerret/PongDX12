@@ -152,10 +152,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Core\DXCore.cpp" />
+    <ClCompile Include="Core\OwariEngine.cpp" />
     <ClCompile Include="Core\WinCore.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\DXCore.h" />
+    <ClInclude Include="Core\OwariEngine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

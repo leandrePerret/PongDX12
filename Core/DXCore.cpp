@@ -32,16 +32,27 @@ IDXGIFactory7* CreateDXGIFactory() {
 
 IDXGIAdapter1* GetHardwareAdapter(IDXGIFactory7* factory, bool requestHighPerformanceAdapter) {
 	// Get an appropriate adapter (GPU)
+
+	// First we try to find the best adapter that supports Direct3D 12.
 	IDXGIAdapter1* adapter = nullptr;
 	if (requestHighPerformanceAdapter) {
 		for (UINT adapterIndex = 0; DXGI_ERROR_NOT_FOUND != factory->EnumAdapterByGpuPreference(adapterIndex, DXGI_GPU_PREFERENCE_HIGH_PERFORMANCE, IID_PPV_ARGS(&adapter)); ++adapterIndex) {
 			if (SUCCEEDED(D3D12CreateDevice(adapter, D3D_FEATURE_LEVEL_11_0, _uuidof(ID3D12Device), nullptr))) {
 				return adapter; // Found a suitable adapter
 			}
-			
+
 			adapter->Release(); // Release the adapter if not suitable to free memory
 		}
 	}
+
+	// If we didn't find a high-performance adapter, we can try to find any adapter that supports Direct3D 12.
+	for (UINT adapterIndex = 0; DXGI_ERROR_NOT_FOUND != factory->EnumAdapters1(adapterIndex, &adapter); ++adapterIndex) {
+		if (SUCCEEDED(D3D12CreateDevice(adapter, D3D_FEATURE_LEVEL_11_0, _uuidof(ID3D12Device), nullptr))) {
+			return adapter; // Found a suitable adapter
+		}
+		adapter->Release(); // Release the adapter if not suitable to free memory
+	}
+	return nullptr;	// No suitable adapter found
 }
 
 ID3D12Device* CreateDevice(IDXGIAdapter1* adapter) {
@@ -110,18 +121,26 @@ DXGI_SWAP_CHAIN_DESC1 CreateSwapChainDesc(UINT width, UINT height, UINT bufferCo
 	return swapChainDesc;
 }
 
-IDXGISwapChain1* CreateSwapChain(IDXGIFactory7* factory, HWND hWnd, ID3D12CommandQueue* commandQueue, DXGI_SWAP_CHAIN_DESC1* swapChainDesc) {
+IDXGISwapChain3* CreateSwapChain(IDXGIFactory7* factory, HWND hWnd, ID3D12CommandQueue* commandQueue, DXGI_SWAP_CHAIN_DESC1* swapChainDesc) {
 	// Create the swap chain
-	IDXGISwapChain1* swapChain = nullptr;
+	IDXGISwapChain1* tempSwapChain = nullptr;
 	HRESULT hr = factory->CreateSwapChainForHwnd(
 		commandQueue,
 		hWnd,
 		swapChainDesc,
 		nullptr,
 		nullptr,
-		&swapChain
+		&tempSwapChain
 	);
 	if (FAILED(hr)) {
+		return nullptr;
+	}
+
+	IDXGISwapChain3* swapChain = nullptr;
+	hr = tempSwapChain->QueryInterface(IID_PPV_ARGS(&swapChain));
+	tempSwapChain->Release();
+
+	if(FAILED(hr)) {
 		return nullptr;
 	}
 	return swapChain;
@@ -142,6 +161,38 @@ ID3D12DescriptorHeap* CreateDescriptorHeap(ID3D12Device* device) {
 	return rtvHeap;
 }
 
-void CreateRenderTargets(ID3D12Device* device, IDXGISwapChain1* swapChain, ID3D12DescriptorHeap* rtvHeap) {
+void CreateRenderTargets(ID3D12Device* device, IDXGISwapChain3* swapChain, ID3D12DescriptorHeap* rtvHeap) {
+	// Create render target views for each frame in the swap chain and store them in an array
+	// An RTV is a descriptor that permit the GPU to know how to access a resource as a render target (a texture that can be rendered to)
+	// We ash how big a descriptor is in the heap to know how much to move the handle for each render target view
+	UINT rtvDescriptorSize = device->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_RTV);
+	D3D12_CPU_DESCRIPTOR_HANDLE rtvHandle = rtvHeap->GetCPUDescriptorHandleForHeapStart();
 
+	for (UINT n = 0; n < FrameCount; n++) {
+		// Get the back buffer from the swap chain and create a render target view for it
+		swapChain->GetBuffer(n, IID_PPV_ARGS(&renderTargets[n]));
+		device->CreateRenderTargetView(renderTargets[n], nullptr, rtvHandle);
+		rtvHandle.ptr += rtvDescriptorSize; // Move the handle to the next descriptor in the heap to avoid overwriting the previous one
+	}
+}
+
+ID3D12CommandAllocator* CreateCommandAllocator(ID3D12Device* device) {
+	// Create a command allocator which is used to allocate memory for command lists
+	ID3D12CommandAllocator* commandAllocator = nullptr;
+	HRESULT hr = device->CreateCommandAllocator(D3D12_COMMAND_LIST_TYPE_DIRECT, IID_PPV_ARGS(&commandAllocator));
+	if (FAILED(hr)) {
+		return nullptr;
+	}
+	return commandAllocator;
+}
+
+ID3D12GraphicsCommandList* CreateCommandList(ID3D12Device* device, ID3D12CommandAllocator* allocator) {
+	// Create a command list which is used to record commands that will be submitted to the GPU
+	ID3D12GraphicsCommandList* commandList = nullptr;
+	HRESULT hr = device->CreateCommandList(0, D3D12_COMMAND_LIST_TYPE_DIRECT, allocator, nullptr, IID_PPV_ARGS(&commandList));
+	if (FAILED(hr)) {
+		return nullptr;
+	}
+	commandList->Close(); // Command lists are created in the recording state. We need to close it before we can reset it to record commands.
+	return commandList;
 }
