@@ -21,6 +21,7 @@ private:
 	ID3D12CommandAllocator* commandAllocator;
 	ID3D12GraphicsCommandList* commandList;
 	ID3D12Fence* fence;
+	UINT backBufferIndex;
 
 public:
 	OwariEngine();
@@ -32,4 +33,10 @@ public:
 	void ClearScreen(float r, float g, float b, float a);
 	void EndFrame();
 	void DrawRectangle(float x, float y, float width, float height);
+};
+
+struct GameObject
+{
+	ID3D12Resource* vertexBuffer;
+	D3D12_VERTEX_BUFFER_VIEW vertexBufferView;
 };

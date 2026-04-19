@@ -24,12 +24,18 @@
     <ClCompile Include="Core\OwariEngine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameFiles\Code\PadleHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\DXCore.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Core\OwariEngine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\OMath.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

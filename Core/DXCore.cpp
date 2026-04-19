@@ -196,3 +196,39 @@ ID3D12GraphicsCommandList* CreateCommandList(ID3D12Device* device, ID3D12Command
 	commandList->Close(); // Command lists are created in the recording state. We need to close it before we can reset it to record commands.
 	return commandList;
 }
+
+ID3D12Resource* CreateVertexBuffer(ID3D12Device* device, void* vertexData, UINT bufferSize) {
+	// Create a vertex buffer resource and upload the vertex data to it
+	// The bufferSize is in bytes 
+	ID3D12Resource* vertexBuffer = nullptr;
+
+	// We tell the CPU we want an upload heap which is a type of memory that is optimized for CPU to GPU data transfer.
+	D3D12_HEAP_PROPERTIES heapProperties = {};
+	heapProperties.Type = D3D12_HEAP_TYPE_UPLOAD; // Upload for CPU to GPU transfer
+	heapProperties.CPUPageProperty = D3D12_CPU_PAGE_PROPERTY_UNKNOWN;
+	heapProperties.MemoryPoolPreference = D3D12_MEMORY_POOL_UNKNOWN;
+	heapProperties.CreationNodeMask = 1;
+	heapProperties.VisibleNodeMask = 1;
+
+	// We describe the buffer resource we want to create.
+	D3D12_RESOURCE_DESC bufferDesc = {};
+	bufferDesc.Dimension = D3D12_RESOURCE_DIMENSION_BUFFER;
+	bufferDesc.Alignment = 0;
+	bufferDesc.Width = bufferSize;
+	bufferDesc.Height = 1;
+	bufferDesc.DepthOrArraySize = 1;
+	bufferDesc.MipLevels = 1;
+	bufferDesc.Format = DXGI_FORMAT_UNKNOWN;
+	bufferDesc.SampleDesc.Count = 1;
+	bufferDesc.SampleDesc.Quality = 0;
+	bufferDesc.Layout = D3D12_TEXTURE_LAYOUT_ROW_MAJOR;
+	bufferDesc.Flags = D3D12_RESOURCE_FLAG_NONE;
+
+	// Create the committed resource which allocates memory for the buffer and creates the buffer resource
+	device->CreateCommittedResource(&heapProperties, D3D12_HEAP_FLAG_NONE, &bufferDesc, D3D12_RESOURCE_STATE_GENERIC_READ, nullptr, IID_PPV_ARGS(&vertexBuffer));
+	void* pVertexDataBegin;
+	vertexBuffer->Map(0, nullptr, &pVertexDataBegin);
+	memcpy(pVertexDataBegin, vertexData, bufferSize);
+	vertexBuffer->Unmap(0, nullptr);
+	return vertexBuffer;
+}

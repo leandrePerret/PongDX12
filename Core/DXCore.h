@@ -26,3 +26,4 @@ const UINT WindowWidth = 1920;
 const UINT WindowHeight = 1080;
 const UINT FrameCount = 2;
 extern ID3D12Resource* renderTargets[FrameCount];
+ID3D12Resource* CreateVertexBuffer(ID3D12Device* device, void* vertexData, UINT bufferSize);

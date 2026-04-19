@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\OwariEngine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|solutionrelative:Core\\OwariEngine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|C:\\Users\\Owari\\Desktop\\github\\PongDX12\\GameFiles\\Code\\PadleHandler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|solutionrelative:GameFiles\\Code\\PadleHandler.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\OwariEngine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|solutionrelative:Core\\OwariEngine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\DXCore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|solutionrelative:Core\\DXCore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\OMath.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|solutionrelative:Core\\OMath.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\WinCore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -19,8 +23,12 @@
       "RelativeMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|solutionrelative:Core\\DXCore.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\DXCore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|solutionrelative:Core\\DXCore.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\OwariEngine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|solutionrelative:Core\\OwariEngine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\OwariEngine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BF567FED-97D5-4FF1-8652-535548472EE8}|PongDX12.vcxproj|solutionrelative:Core\\OwariEngine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,63 +43,85 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "OwariEngine.cpp",
-              "DocumentMoniker": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\OwariEngine.cpp",
-              "RelativeDocumentMoniker": "Core\\OwariEngine.cpp",
-              "ToolTip": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\OwariEngine.cpp",
-              "RelativeToolTip": "Core\\OwariEngine.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
+              "Title": "PadleHandler.cpp",
+              "DocumentMoniker": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\GameFiles\\Code\\PadleHandler.cpp",
+              "RelativeDocumentMoniker": "GameFiles\\Code\\PadleHandler.cpp",
+              "ToolTip": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\GameFiles\\Code\\PadleHandler.cpp",
+              "RelativeToolTip": "GameFiles\\Code\\PadleHandler.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-23T10:19:07.216Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "OwariEngine.h",
-              "DocumentMoniker": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\OwariEngine.h",
-              "RelativeDocumentMoniker": "Core\\OwariEngine.h",
-              "ToolTip": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\OwariEngine.h",
-              "RelativeToolTip": "Core\\OwariEngine.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-19T09:46:27.843Z",
+              "WhenOpened": "2026-03-30T17:05:53.115Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "OMath.h",
+              "DocumentMoniker": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\OMath.h",
+              "RelativeDocumentMoniker": "Core\\OMath.h",
+              "ToolTip": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\OMath.h",
+              "RelativeToolTip": "Core\\OMath.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-30T16:58:08.929Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OwariEngine.cpp",
+              "DocumentMoniker": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\OwariEngine.cpp",
+              "RelativeDocumentMoniker": "Core\\OwariEngine.cpp",
+              "ToolTip": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\OwariEngine.cpp",
+              "RelativeToolTip": "Core\\OwariEngine.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-23T10:19:07.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OwariEngine.h",
+              "DocumentMoniker": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\OwariEngine.h",
+              "RelativeDocumentMoniker": "Core\\OwariEngine.h",
+              "ToolTip": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\OwariEngine.h",
+              "RelativeToolTip": "Core\\OwariEngine.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-19T09:46:27.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "WinCore.cpp",
               "DocumentMoniker": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\WinCore.cpp",
               "RelativeDocumentMoniker": "Core\\WinCore.cpp",
               "ToolTip": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\WinCore.cpp",
               "RelativeToolTip": "Core\\WinCore.cpp",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-31T11:20:59.571Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-31T11:20:59.571Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "DXCore.h",
               "DocumentMoniker": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\DXCore.h",
               "RelativeDocumentMoniker": "Core\\DXCore.h",
               "ToolTip": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\DXCore.h",
               "RelativeToolTip": "Core\\DXCore.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-12-31T11:42:00.735Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "DXCore.cpp",
               "DocumentMoniker": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\DXCore.cpp",
               "RelativeDocumentMoniker": "Core\\DXCore.cpp",
               "ToolTip": "C:\\Users\\Owari\\Desktop\\github\\PongDX12\\Core\\DXCore.cpp",
               "RelativeToolTip": "Core\\DXCore.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKAAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKwAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-12-31T11:30:36.683Z"
             }
